@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Black Box Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link rel="stylesheet" href="blackBoxStyle.css">
+    <script src="https://unpkg.com/swup@4" defer></script>
+    <script src="BlackBox.js" defer></script>
+</head>
+<body>
+<main id="swup" class="transition-fade">
+<div class="top-section">
+        <h3>Book Now</h3>
+    </div>
+
+    <form id="multiStepForm" name="darkroom-booking-form" method="POST" 
+      data-netlify="true" action="/darkroomBookingConfermation.html">
+    
+    <input type="hidden" name="form-name" value="darkroom-booking-form" />
+
+    <div class="booking-container">
+        <div class="booking-columns-wrapper">
+        
+        <div class="calendar-section">
+            <div class="calendar-header">
+                <button id="prevMonth" class="nav-button"><i class="fas fa-chevron-left"></i></button>
+                <div class="month-year-display">December 2025</div>
+                <button id="nextMonth" class="nav-button"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <div class="calendar-grid">
+                <div class="day-name">Sun</div>
+                <div class="day-name">Mon</div>
+                <div class="day-name">Tue</div>
+                <div class="day-name">Wed</div>
+                <div class="day-name">Thu</div>
+                <div class="day-name">Fri</div>
+                <div class="day-name">Sat</div>
+
+                <div id="calendarDays" class="calendar-days">
+                    <div class="day day-prev">27</div>
+                    <div class="day day-prev">28</div>
+                    <div class="day day-prev">29</div>
+                    <div class="day day-prev">30</div>
+                    <div class="day day-prev">31</div>
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day today selected-day">10</div> 
+                    <div class="day">11</div>
+                </div>
+            </div>
+            
+            <h3 class="time-title">Available Time Slots</h3>
+            <div class="time-slots" id="timeSlots">
+                <button class="time-slot" data-time="09:00">09:00 - 11:00</button>
+                <button class="time-slot" data-time="11:30">11:30 - 13:30</button>
+                <button class="time-slot" data-time="14:00">14:00 - 16:00</button>
+                <button class="time-slot disabled" data-time="16:30">16:30 - 18:30</button>
+                <button class="time-slot" data-time="19:00">19:00 - 21:00</button>
+            </div>
+
+            <div class="summary-box">
+                <p>Selected Booking:</p>
+                <span id="selectedDateDisplay">Wed, Dec 10</span> @ <span id="selectedTimeDisplay">19:00 - 21:00</span>
+            </div>
+            <input type="hidden" name="Booking Date" id="dateHidden">
+            <input type="hidden" name="Time Slot" id="timeHidden">
+         </div>
+
+        <div class="info-section">
+                
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555">
+                </div>
+                
+                <div class="form-group">
+                    <label for="projectType">Project Type (e.g., B&W Prints, Cyanotypes)</label>
+                    <select id="projectType" name="projectType">
+                        <option value="bw">Black & White Printing</option>
+                        <option value="color">Color Printing</option>
+                        <option value="alt">Alternative Process</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+        </div>
+        </div>
+        <button type="submit" class="complete-booking-button">Compleate Booking &rarr;</button>
+    </div>
+    </form>
+</main>
+</body>
+</html>
