@@ -6,6 +6,7 @@ if (localStorage.getItem('theme') === 'light') {
 }
 
 function initTheme() {
+    // 1. Force the theme onto the HTML element based on localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
@@ -13,18 +14,20 @@ function initTheme() {
         document.documentElement.removeAttribute('data-theme');
     }
     
+    // 2. Setup the button listener (only if button exists on current page)
     const themeBtn = document.getElementById('theme-toggle');
-    if (!themeBtn) return; 
-    themeBtn.onclick = () => {
-        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-        if (isLight) {
-            document.documentElement.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        }
-    };
+    if (themeBtn) {
+        themeBtn.onclick = () => {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            if (isLight) {
+                document.documentElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        };
+    }
 }
 
 function initGlobalAnimations() {
