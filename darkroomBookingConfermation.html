@@ -6,6 +6,16 @@
     <title>Black Box Studios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <script>
+    (function() {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+    })();
+    </script>
     <link rel="stylesheet" href="blackBoxStyle.css">
     <script src="https://unpkg.com/swup@4" defer></script>
     <script src="BlackBox.js" defer></script>

@@ -169,6 +169,8 @@ initializePageContent(); window.addEventListener ("DOMContentLoaded",() => {
 
 swup.hooks.on('content:replace', () => {
     initializePageContent(); 
+    initTheme(); 
+    
     setTimeout(() => {
         ScrollTrigger.refresh();
         window.scrollTo(0, 0); 
