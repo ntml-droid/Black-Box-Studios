@@ -1187,6 +1187,9 @@ width: 50%;
 
 .receipt-box {
   width: 80%;
+  background-color: var(--bg); 
+  color: var(--text);           
+  padding: 20px;
 }
 
 #receiptPlaceholder {
@@ -1200,7 +1203,10 @@ width: 50%;
 
 .receipt-section {
   flex: 1;
+}
 
+.receipt-section h3 {
+    color: var(--text);
 }
 
 .back-link {
