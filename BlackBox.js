@@ -6,7 +6,7 @@ if (localStorage.getItem('theme') === 'light') {
 }
 
 function initTheme() {
-    // 1. Force the theme onto the HTML element based on localStorage
+    console.log ("called init theme")
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
@@ -14,7 +14,6 @@ function initTheme() {
         document.documentElement.removeAttribute('data-theme');
     }
     
-    // 2. Setup the button listener (only if button exists on current page)
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
         themeBtn.onclick = () => {
@@ -160,7 +159,13 @@ function initializePageContent() {
     });
 }
 
-initializePageContent(); 
+initializePageContent(); window.addEventListener ("DOMContentLoaded",() => {
+    initializePageContent(); 
+    setTimeout(() => {
+        ScrollTrigger.refresh();
+        window.scrollTo(0, 0); 
+    }, 150);
+}); 
 
 swup.hooks.on('content:replace', () => {
     initializePageContent(); 
