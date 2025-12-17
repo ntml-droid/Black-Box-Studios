@@ -12,7 +12,7 @@ function initTheme() {
     } else {
         document.documentElement.removeAttribute('data-theme');
     }
-
+    
     const themeBtn = document.getElementById('theme-toggle');
     if (!themeBtn) return; 
     themeBtn.onclick = () => {

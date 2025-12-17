@@ -4,17 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const dataJSON = sessionStorage.getItem('bookingReceipt');
     
     if (receiptBox) {
-        
-        // --- A. CHECK FOR REAL DATA (After form submission) ---
         if (dataJSON) {
             const data = JSON.parse(dataJSON);
 
-            // 1. Remove the static placeholder (if it exists)
             if (placeholder) {
                 receiptBox.removeChild(placeholder);
             }
 
-            // 2. Inject the dynamic receipt structure
             receiptBox.innerHTML = `
                 <div class="receipt-section">
                     <h3>Booking Details</h3>
@@ -35,14 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>A confirmation email with payment details has been sent to ${data.email}.</p>
                 </div>
             `;
-            
-            // 3. Clean up the storage
             sessionStorage.removeItem('bookingReceipt'); 
 
-        } 
-        
-        // --- B. NO REAL DATA FOUND ---
-        // If the user navigates here directly, the placeholder stays, 
-        // allowing you to inspect the CSS.
+        }
     }
 });
