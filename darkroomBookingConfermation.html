@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Black Box Studios</title>
@@ -9,29 +9,72 @@
     <link rel="stylesheet" href="blackBoxStyle.css">
     <script src="https://unpkg.com/swup@4" defer></script>
     <script src="BlackBox.js" defer></script>
+    <script src="ConfirmationScript.js" defer></script>
 </head>
 <body>
 <main id="swup" class="transition-fade">
     <div class="top-section">
         <a href="darkroomBookingStep2.html" class="back-link">&lt; Back to Form</a>
-        <h3>Booking Confirmation</h3>
+        <h3>Your Rental Has <br> Been Booked!</h3>
     </div>
 
-    <div class="booking-container">
+<div class="booking-container">
+    
+    <div class="receipt-summary-wrapper">
         
-        <div class="receipt-summary-wrapper">
-            <h2>Your rental has been booked!</h2>
+        <div id="receiptBox" class="receipt-box">
             
-            <div id="receiptBox" class="receipt-box">
+            <div id="receiptPlaceholder">
+                <div class="receipt-section">
+                    <h3>Booking Details</h3>
+                    <p><strong>Service:</strong> Dark Room Rental ($25/Hr)</p>
+                    <p><strong>Date:</strong> Fri, Dec 12</p>
+                    <p><strong>Time Slot:</strong> 14:00 - 16:00</p>
+                    <p><strong>Project Type:</strong> Black & White Printing</p>
                 </div>
-            
-            <div class="next-steps">
-                <a href="index.html" class="next-step-link">Return Home &rarr;</a>
-                <a href="booking.html" class="next-step-link">Book other services &rarr;</a>
+                
+                <div class="receipt-section contact-info">
+                    <h3>Contact Information</h3>
+                    <p><strong>Full Name:</strong> Jane Doe</p>
+                    <p><strong>Email:</strong> jane.doe@example.com</p>
+                    <p><strong>Phone:</strong> (555) 123-4567</p>
+                </div>
             </div>
         </div>
-
+        
+        <div class="next-steps">
+            <a href="index.html">Return Home &rarr;</a>
+        </div>
     </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-top-grid">
+        <div class="footer-tag">CONTACT</div>
+        
+        <ul class="footer-contact"> 
+            <li>Contact@blackbox.com</li>
+            <li>307-752-1357</li>
+            <li>20 rue Rampal, F-75019 Paris, France</li>
+        </ul>
+        
+        <ul class="social-media-links">
+            <li><a href="#">Instagram &rarr;</a></li>
+            <li><a href="#">Facebook &rarr;</a></li>
+            <li><a href="#">Behance &rarr;</a></li>
+            <li><a href="#">LinkedIn &rarr;</a></li>
+        </ul>
+    </div>
+
+<div class="hero-section-footer">
+<h2 class="hero-text">
+            <span class="line-one">BLACK BOX</span><br>
+            <span class="line-two-wrapper">
+                STUDIOS </span>
+            </span>
+        </h2>
+</div>
+</footer>
 </main>
 </body>
 </html>

@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link rel="stylesheet" href="blackBoxStyle.css">
     <script src="https://unpkg.com/swup@4" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="ScrollTrigger.min.js"></script>
     <script src="BlackBox.js" defer></script>
 </head>
 <body>
@@ -19,6 +21,11 @@
       <li><a href="/gallery.html">Gallery</a></li>
       <li><a href="/contact.html">Contact</a></li>
       <li><a href="/booking.html">Booking</a></li>
+      <li>
+        <button id="theme-toggle" aria-label="Toggle Theme">
+                    <span class="theme-icon"></span>
+        </button>
+      </li>
       </ul>
     </nav>
     </header>
@@ -34,7 +41,9 @@
         </section>
     
     <section class="decoration-video-wrapper">
-        <img class="decoration-image" src="DecoratioVideo.gif" alt="Decoration Image">
+      <div class="photo-loading-wrapper decoration-image">
+        <img class="decoration-image" src="Photos/Hero Image 3.jpg" alt="Decoration Image">
+        </div>
     </section>
 
     <section class="bio-section">
@@ -76,7 +85,7 @@
       <div class="accordion-item">
         <div class="accordion-header">
           <h3> Service 1</h3>
-          <span>▶</span>
+          <span>&rarr;</span>
         </div>
         <div class="accordion-content">
           <div class="accordion-inner">
@@ -94,7 +103,7 @@
       <div class="accordion-item">
         <div class="accordion-header">
           <h3>Service 2</h3>
-          <span>▶</span>
+          <span>&rarr;</span>
         </div>
         <div class="accordion-content">
           <div class="accordion-inner">
@@ -112,7 +121,7 @@
       <div class="accordion-item">
         <div class="accordion-header">
           <h3>Service 3</h3>
-          <span>▶</span>
+          <span>&rarr;</span>
         </div>
         <div class="accordion-content">
           <div class="accordion-inner">
@@ -130,7 +139,7 @@
       <div class="accordion-item">
         <div class="accordion-header">
           <h3>Service 4</h3>
-          <span>▶</span>
+          <span>&rarr;</span>
         </div>
       <div class="accordion-content">
           <div class="accordion-inner">
@@ -148,42 +157,68 @@
 </section>
 
 <section class="decoration-image-wrapper">
-    <img class="decoration-image" src="DecoratioVideo.gif" alt="Decoration Image">
+  <div class="photo-loading-wrapper decoration-image">
+    <img class="decoration-image" src="Photos/Hero Image 2.jpg" alt="Decoration Image">
+  </div>
 </section>
 
 <section class="featured-photos-section-wrapper">
-        <h3 class="featured-photos-tag">Featured Photos</h3>
+        <h3 class="featured-photos-tag">Current Exhibition</h3>
         <p class=" featured-photos-description">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum dictum
             mus eleifend accumsan aliquam tortor aliquam egestas.
             Convallis sit dictumst amet scelerisque aliquet vestibulum id. Commodo nunc bibendum malesuada
             volutpatate. Enim pretium ornare rhoncus quesque amet
             odio quam augue tempus. Mattis etiam eu fam nulla
-            libero. Arcu enim risus phasellus venenatis lacus
-        </p>
-        <a href="#" class="view-gallery-button">Gallery &rarr;</a>
-</section>
-
-<section class="featured-photos-grid-wrapper">
-    <img class="featured-photo-1" src="Scan 20.jpg" alt="Featured Photo 1">
-    <img class="featured-photo-2" src="Scan 35 copy.jpeg" alt="Featured Photo 2">
-    <img class="featured-photo-3" src="Scan 20.jpg" alt="Featured Photo 3">
-    <img class="featured-photo-4" src="Scan 35 copy.jpeg" alt="Featured Photo 4">
-    <img class="featured-photo-5" src="Scan 20.jpg" alt="Featured Photo 5">
-</section>
-
-<section class="calls-for-art-wrapper">
-  <h3 class="calls-for-art-tag">Calls for Art</h3>
-        <p class=" calls-for-art-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum dictum
+            libero. Arcu enim risus phasellus venenatis lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dictum dictum
             mus eleifend accumsan aliquam tortor aliquam egestas.
             Convallis sit dictumst amet scelerisque aliquet vestibulum id. Commodo nunc bibendum malesuada
             volutpatate. Enim pretium ornare rhoncus quesque amet
             odio quam augue tempus. Mattis etiam eu fam nulla
             libero. Arcu enim risus phasellus venenatis lacus
         </p>
-        <a href="#" class="call-for-art-button">Calls for Art &rarr;</a>
 </section>
+
+<section class="featured-photos-carousel-container">
+    <div class="pin-spacer">
+        <div class="carousel-viewport">
+            
+            <div class="carousel-wrapper">
+
+              <div class="carousel-item photo-loading-wrapper">
+              <div class="carousel-item">
+                    <img src="Photos/Scan 37.jpg" alt="Photo 1">
+                </div>
+              </div>
+              
+              <div class="carousel-item photo-loading-wrapper">
+                <div class="carousel-item">
+                    <img src="Photos/Scan 39.jpg" alt="Photo 2">
+                </div>
+              </div>
+               
+              <div class="carousel-item photo-loading-wrapper">
+                <div class="carousel-item">
+                    <img src="Photos/Scan 41.jpg" alt="Photo 3">
+                </div>
+              </div>
+               
+              <div class="carousel-item photo-loading-wrapper">
+                <div class="carousel-item">
+                    <img src="Photos/Scan 42.jpg" alt="Photo 4">
+                </div>
+              </div>
+               
+              <div class="carousel-item photo-loading-wrapper">
+                <div class="carousel-item">
+                    <img src="Photos/Scan 36.jpg" alt="Photo 5">
+                </div>
+              </div>
+            </div>
+            </div>
+    </div>
+</section>
+
 <footer class="footer">
     <div class="footer-top-grid">
         <div class="footer-tag">CONTACT</div>
