@@ -1,19 +1,20 @@
 gsap.registerPlugin(ScrollTrigger);
 const swup = new Swup();
 
-// Check theme immediately on script load to prevent "flashing"
 if (localStorage.getItem('theme') === 'light') {
     document.documentElement.setAttribute('data-theme', 'light');
 }
 
-// --------------------------------------------------------
-// 1. COMPONENT FUNCTIONS
-// --------------------------------------------------------
-
 function initTheme() {
-    const themeBtn = document.getElementById('theme-toggle');
-    if (!themeBtn) return;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+        document.documentElement.removeAttribute('data-theme');
+    }
 
+    const themeBtn = document.getElementById('theme-toggle');
+    if (!themeBtn) return; 
     themeBtn.onclick = () => {
         const isLight = document.documentElement.getAttribute('data-theme') === 'light';
         if (isLight) {
@@ -94,20 +95,17 @@ function initCarousel() {
     }
 }
 
-// --------------------------------------------------------
-// 2. MAIN INITIALIZATION (Runs on load and Swup replace)
-// --------------------------------------------------------
-
 function initializePageContent() {
-    // 1. Kill old triggers to prevent memory leaks and "ghost" animations
     ScrollTrigger.getAll().forEach(t => t.kill());
 
-    // 2. Restart animations and theme listener
     initGlobalAnimations();
     initCarousel();
-    initTheme();
+    initTheme(); 
     
-    // 3. Accordion logic
+    if (typeof initConfirmationPage === "function") {
+        initConfirmationPage();
+    }
+    
     document.querySelectorAll(".accordion-header").forEach((header) => {
         header.onclick = () => {
             const content = header.nextElementSibling;
@@ -124,7 +122,6 @@ function initializePageContent() {
         };
     });
 
-    // 4. Calendar logic
     const calendarDays = document.getElementById('calendarDays');
     if (calendarDays) {
         calendarDays.innerHTML = '';
@@ -147,7 +144,6 @@ function initializePageContent() {
         }
     }
 
-    // 5. Loading spinners
     const imageWrappers = document.querySelectorAll('.photo-loading-wrapper');
     imageWrappers.forEach(wrapper => {
         const img = wrapper.querySelector('img');
@@ -160,10 +156,6 @@ function initializePageContent() {
         }
     });
 }
-
-// --------------------------------------------------------
-// 3. EXECUTION
-// --------------------------------------------------------
 
 initializePageContent(); 
 
