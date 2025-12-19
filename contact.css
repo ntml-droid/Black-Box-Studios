@@ -1,0 +1,52 @@
+.content-section-wrapper{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap:20px;
+  position: relative;
+  background: var(--bg);
+  padding: 0 40px 150px 40px; 
+}
+
+.content-tag{
+  font-size: var(--font-size-h3);
+  grid-row: 1/2;
+  grid-column: 1/4;
+  align-self: start;
+  justify-self: start;
+}
+
+.contact-emails{
+  grid-row: 2/4;
+  grid-column: 1/2;
+  align-self: start;
+  justify-self: start;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 60px; 
+}
+
+.content-discription{
+  grid-row: 2/3;
+  grid-column: 3/5;
+  align-self: end;
+  justify-self: end;
+  width: 60vh;
+  text-align: right;
+}
+
+.sendAMessage-button{
+  grid-row: 3/4;
+  grid-column: 4/5;
+  justify-self: end;
+  align-self: end;
+  font-size: var(--font-size-h4);
+  color: var(--text);
+}
+
+.sendAMessage-button:hover{
+  color: grey;
+}

@@ -191,6 +191,24 @@ document.addEventListener('submit', (e) => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const burger = document.getElementById('burgerToggle');
+const sidebar = document.getElementById('mobileMenu');
+
+burger.addEventListener('click', () => {
+    sidebar.classList.toggle('active');
+
+    burger.classList.toggle('active');
+});
+
+document.querySelectorAll('.sidebar a').forEach(link => {
+    link.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+        burger.classList.remove('active');
+    });
+});
+});
+
 
 
 

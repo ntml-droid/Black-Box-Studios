@@ -247,10 +247,10 @@
 }
 
 .carousel-item {
-    aspect-ratio: 1/1;
-    width: 80vh; 
-    position: relative;
-    box-sizing: border-box;
+  aspect-ratio: 1/1;
+  width: 80vh;
+  position: relative;
+  box-sizing: border-box;
 }
 
 .carousel-item img {
@@ -263,4 +263,126 @@
     
     image-rendering: -webkit-optimize-contrast; 
     will-change: transform;
+}
+
+@media (max-width: 600px) {
+  .carousel-viewport,
+  .carousel-wrapper {
+    height: 100vw;
+    min-height: 120px;
+    padding-left: 0;
+    align-self: center;
+  }
+  .carousel-wrapper {
+    gap: 10px;
+    padding-left: 0px;
+  }
+  .carousel-item {
+    width: 80vw;
+    min-width: 100px;
+    max-width: 90vw;
+  }
+  .pin-spacer {
+    height: 60vw;
+    min-height: 120px;
+    max-height: 80vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .decoration-image-wrapper {
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  padding-top: 5vh;
+
+}
+}
+
+@media (max-width:600px){
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 20px;
+    position: relative;
+    background: var(--bg);
+    padding: 60px 20px;
+  }
+.bio-tag,
+.bio-text,
+.read-more-link {
+    grid-column: 1 / -1 !important;
+    justify-self: start;
+  }
+
+.bio-section {
+    padding: 0;
+  }
+  
+.bio-tag {
+    position: static;
+    padding: 0.5rem 0;
+    top: auto;
+    left: auto;
+    margin-top: 0;
+  }
+
+  .bio-tag {
+  align-self: start;
+  font-weight: 300;
+  font-size: var(--font-size-h4);
+  z-index: 2;
+  color: var(--text);
+  margin-top: 0;
+  position: static;
+  padding: 0.5rem 0;
+  top:auto;
+  left:auto;
+}
+
+.bio-statement-line1,
+.bio-statement-line2 {
+  display: none;
+}
+
+.bio-text {
+  grid-column: 1 / 5;
+  grid-row: 2 / 3;
+  font-size: var(--font-size-body);
+  color: var(--text);
+  align-self: start;
+  font-weight: 300;
+}
+
+  .read-more-link {
+    grid-column: 1/ 3;
+    grid-row: 3/4;
+    justify-self: start;
+  }
+
+  /* 3. Service & Exhibition Sections */
+  .service-section-wrapper,
+  .featured-photos-section-wrapper {
+    grid-template-columns: 1fr;
+    padding: 60px 20px; /* Reduced top padding from 300px */
+  }
+
+  .service-tag, .service-description, .book-now-button,
+  .featured-photos-tag, .featured-photos-description {
+    grid-column: 1 / -1;
+    justify-self: start;
+    text-align: left;
+  }
+  
+  /* 5. Sidebar Menu fix */
+  .sidebar {
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
 }

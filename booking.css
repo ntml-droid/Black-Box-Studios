@@ -1,3 +1,20 @@
+.body, .booking-container, .receipt-box {
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.top-section {
+    padding-left: 40px;
+    text-align: left;
+}
+.top-section h3 {
+    font-weight: 300;
+    font-size: var(--font-size-h3);
+    color: var(--text);
+    text-align: left;
+}
+
 .bookingService-wrapper {
   padding: 0 40px 200px 40px;
 }
@@ -118,12 +135,23 @@ width: 50%;
     flex-direction: column;
     max-width: 100%;
     overflow: hidden;
+    padding-bottom: 80px;
 }
 
 .calendar-section, .info-section {
     flex: 1; 
     padding: 0 40px; 
 }
+
+.booking-columns-wrapper {
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%; 
+    align-items: flex-start;
+}
+
 
 .calendar-header {
     display: flex;
@@ -281,6 +309,7 @@ select:focus {
     color: grey; 
 }
 
+
 /* Booking Confermation */
 
 /* Check CSS for extra booking-container tag */
@@ -327,6 +356,26 @@ select:focus {
 .next-steps :hover{
   color: gray;
 }
+
+@media (max-width: 900px) {
+    .booking-container {
+        flex-direction: column;
+    }
+    .calendar-section {
+        border-right: none;
+        border-bottom: 1px solid #333333; 
+    }
+}
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .calendar-section, .info-section {
+        padding: 20px;
+    }
+}
+
+
 
 
 
